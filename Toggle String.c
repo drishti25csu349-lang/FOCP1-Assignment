@@ -1,20 +1,16 @@
 #include <stdio.h>
-
+#include <ctype.h>
 int main() {
-    char s[101];
-    scanf("%s", s);
-
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (s[i] >= 'a' && s[i] <= 'z') {
-            // lowercase → uppercase
-            s[i] = s[i] - 'a' + 'A';
-        }
-        else if (s[i] >= 'A' && s[i] <= 'Z') {
-            // uppercase → lowercase
-            s[i] = s[i] - 'A' + 'a';
-        }
+    char str[101];
+    scanf("%s",&str);
+    for (int i = 0;i<101;i++){
+if (str[i]>='a' && str[i]<='z' ){
+    str[i] = toupper(str[i]);
+}
+else {
+    str[i] = tolower(str[i]);
+}
     }
-
-    printf("%s\n", s);
-    return 0;
+    printf("%s",str);
+        return 0;
 }
